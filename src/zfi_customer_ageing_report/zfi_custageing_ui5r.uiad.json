@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "CustomerAgeing Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "ZCustomer Ageing Report"
+  },
+  "ui5AppDetails": {
+    "appId": "zcustageingreport.zcustageingreportfi"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_1EC83C5C272F248387932873B1FE22194C98E353_TM",
+    "semanticObject": "ZCUSTAGEING_REPORT_FI",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_1EC83C5C272F248387932873B1FE22194C98E353_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "ZCustomer Ageing Report",
+        "subtitle": "Customer Ageing Report"
+      }
+    }
+  ]
+}

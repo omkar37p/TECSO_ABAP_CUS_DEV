@@ -1,0 +1,14 @@
+managed implementation in class zbp_i_payment_upload unique;
+strict ( 2 );
+
+define behavior for ZI_PAYMENT_UPLOAD //alias <alias_name>
+persistent table zpay_upload
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  create ( authorization : global );
+  update;
+  delete;
+//  field ( readonly ) upload_id;
+}

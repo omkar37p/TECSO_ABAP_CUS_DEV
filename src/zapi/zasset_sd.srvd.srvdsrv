@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For V2'
+define service ZAsset_SD {
+  expose ZASSET_DETAILS_API_PV as MAIN;
+}

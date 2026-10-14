@@ -1,0 +1,34 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Payment Upload Report',
+                typeNamePlural: 'Payment Upload Report',
+                title: { type: #STANDARD, label: 'Payment Upload Report', value: 'CompanyCode' } },
+  presentationVariant: [{ sortOrder: [{ by: 'CompanyCode', direction:  #DESC }] }] }
+annotate entity ZC_PAYMENT_UPLOAD_REF with
+{
+  @UI.facet: [ { id:'Payment Upload Report',
+    purpose:         #STANDARD,
+    type:            #IDENTIFICATION_REFERENCE,
+    label:           'Payment Upload Report',
+    position:        10,
+    targetElement:'CompanyCode' } ]
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Company Code' } ],
+    identification: [ { position: 10, label: 'Company Code' } ],
+    selectionField: [ { position: 10}  ]}
+  CompanyCode;
+  @UI: {  lineItem:       [ { position: 20, label: 'GL Account' } ],
+     identification: [ { position: 20, label: 'GL Account' } ],
+     selectionField: [ { position: 20}  ]}
+  GLAccount;
+  @UI: {  lineItem:       [ { position: 30, label: 'Company Code Name' } ],
+     identification: [ { position: 30, label: 'Company Code Name' } ] }
+  CompanyCodeName;
+  @UI: {  lineItem:       [ { position: 40, label: 'Currency' } ],
+     identification: [ { position: 40, label: 'Currency' } ] }
+  Currency;
+  @UI: {  lineItem:       [ { position: 50, label: 'GL Account Name' } ],
+     identification: [ { position: 50, label: 'GL Account Name' } ] }
+  GLAccountName;
+
+}

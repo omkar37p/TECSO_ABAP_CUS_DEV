@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition of salesregister report'
+define service ZSD_SalesReg_Report_SVCDEF {
+  expose ZSD_SalesReg_PV as SalesRegisterReport;
+}

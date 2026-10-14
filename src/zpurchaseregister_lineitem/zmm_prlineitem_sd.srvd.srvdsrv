@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For Purchase Regsiter LineItem Report V2'
+define service ZMM_PRLINEITEM_SD {
+  expose ZMM_PRLINEITEM_PV as LineItemWise;
+}

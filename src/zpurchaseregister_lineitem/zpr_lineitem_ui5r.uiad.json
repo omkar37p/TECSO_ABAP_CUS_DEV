@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "PurchaseRegister LineItem Report",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Purchaseregister_Lineitem_Report"
+  },
+  "ui5AppDetails": {
+    "appId": "purchaseregisterlineitemreport.purchaseregisterlineitemmmreport"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_E18207080A57C2996B6E1FB0B19DC05BED1150C8_TM",
+    "semanticObject": "ZPurchaseRegister_LI_MMREPORT",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_E18207080A57C2996B6E1FB0B19DC05BED1150C8_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Purchaseregister_Lineitem_Report",
+        "subtitle": "Purchaseregister_Lineitem_Report"
+      }
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZSDEF_PAYMENT_UPLOAD {
+  expose ZC_PAYMENT_UPLOAD_REF;
+}

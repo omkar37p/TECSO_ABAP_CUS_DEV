@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition Sales Order'
+define service Zsdef_sales_order {
+  expose ZC_SALES_ORDER;
+}

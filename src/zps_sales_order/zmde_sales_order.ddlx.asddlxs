@@ -1,0 +1,105 @@
+@Metadata.layer: #PARTNER
+
+@UI: {
+  headerInfo: { typeName: 'Sales Order',
+                typeNamePlural: 'Sales Orders',
+                title: { type: #STANDARD, label: 'Sales Order', value: 'Salesorder' } },
+  presentationVariant: [{ sortOrder: [{ by: 'Salesorder', direction:  #DESC }] }] }
+annotate entity ZC_SALES_ORDER with
+{
+  @UI.facet: [ {// id:'Sales Register Report',
+                     purpose:         #STANDARD,
+                     type:            #IDENTIFICATION_REFERENCE,
+                     label:           'Sales Order',
+                     position:        10 } ]
+
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Sales Order' } ],
+        identification: [ { position: 10, label: 'Sales Order' } ]
+        }
+  Salesorder;
+//  @UI: {  lineItem:       [ { position: 20, label: 'Billing Document' } ],
+//    identification: [ { position: 20, label: 'Billing Document' } ] }
+//  BillingDocument;
+  @UI: {  lineItem:       [ { position: 30, label: 'Sales Order Item' } ],
+    identification: [ { position: 30, label: 'Sales Order Item' } ]
+    }
+  Salesorderitem;
+  @UI: {  lineItem:       [ { position: 40, label: 'Sold To Party' } ],
+    identification: [ { position: 40, label: 'Sold To Party' } ]
+    }
+  Soldtoparty;
+  @UI: {  lineItem:       [ { position: 50, label: 'Sales Order Date' } ],
+  identification: [ { position: 50, label: 'Sales Order Date' } ]
+  }
+  Salesorderdate;
+  @UI: {  lineItem:       [ { position: 60, label: 'Reference Document' } ],
+  identification: [ { position: 60, label: 'Reference Document' } ]
+  }
+  Referencesddocument;
+  @UI: {  lineItem:       [ { position: 70, label: 'Billing documentdate' } ],
+  identification: [ { position: 70, label: 'Billingdocumentdate' } ]
+  }
+  Billingdocumentdate;
+  @UI: {  lineItem:       [ { position: 80, label: 'Fiscalyear' } ],
+  identification: [ { position: 80, label: 'Fiscalyear' } ]
+  }
+  Fiscalyear;
+  @UI: {  lineItem:       [ { position: 90, label: 'SalesOrganization' } ],
+  identification: [ { position: 90, label: 'SalesOrganization' } ]
+  }
+  SalesOrganization;
+  @UI: {  lineItem:       [ { position: 100, label: 'DistributionChannel' } ],
+  identification: [ { position: 100, label: 'DistributionChannel' } ]
+  }
+  DistributionChannel;
+  @UI: {  lineItem:       [ { position: 110, label: 'Salesordertype' } ],
+  identification: [ { position:110, label: 'Salesordertype' } ]
+  }
+  Salesordertype;
+  @UI: {  lineItem:       [ { position: 120, label: 'Salesorderitemcategory' } ],
+  identification: [ { position: 120, label: 'Salesorderitemcategory' } ]
+  }
+  Salesorderitemcategory;
+  @UI: {  lineItem:       [ { position: 130, label: 'Product' } ],
+  identification: [ { position: 130, label: 'Product' } ]
+  }
+  Product;
+  @UI: {  lineItem:       [ { position: 140, label: 'Batch' } ],
+  identification: [ { position: 140, label: 'Batch' } ]
+  }
+  Batch;
+  @UI: {  lineItem:       [ { position: 150, label: 'Plant' } ],
+  identification: [ { position: 150, label: 'Plant' } ]
+  }
+  Plant;
+  @UI: {  lineItem:       [ { position: 160, label: 'Salesorderitemtext' } ],
+  identification: [ { position: 160, label: 'Salesorderitemtext' } ]
+  }
+  Salesorderitemtext;
+  @UI: {  lineItem:       [ { position: 170, label: 'Orderquantity' } ],
+  identification: [ { position: 170, label: 'Orderquantity' } ]
+  }
+  Orderquantity;
+  @UI: {  lineItem:       [ { position: 180, label: 'Orderquantityunit' } ],
+  identification: [ { position: 180, label: 'Orderquantityunit' } ]
+  }
+  Orderquantityunit;
+  @UI: {  lineItem:       [ { position: 190, label: 'Netamount' } ],
+  identification: [ { position: 190, label: 'Netamount' } ]
+  }
+  Netamount;
+  @UI: {  lineItem:       [ { position: 200, label: 'Transactioncurrency' } ],
+  identification: [ { position: 200, label: 'Transactioncurrency' } ]
+  }
+  Transactioncurrency;
+//  @UI: {  lineItem:       [ { position: 210, label: 'BillingDocumentItem' } ],
+//  identification: [ { position: 210, label: 'BillingDocumentItem' } ]
+//  }
+//  BillingDocumentItem;
+//  @UI: {  lineItem:       [ { position: 220, label: 'Billtoparty' } ],
+//  identification: [ { position: 220, label: 'Billtoparty' } ]
+//  }
+//  Billtoparty;
+
+}

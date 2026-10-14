@@ -1,0 +1,59 @@
+@Metadata.layer: #PARTNER
+//@Search.searchable: true
+
+@UI: {
+  headerInfo: { typeName: 'Uttam Development',
+                typeNamePlural: 'Uttam Development',
+                title: { type: #STANDARD, label: 'Uttam Development', value: 'SalesOrder' } },
+  presentationVariant: [{ sortOrder: [{ by: 'SalesOrder', direction:  #DESC }] }] }
+annotate entity Zuu_screen_test_pv with
+{
+
+  @UI.facet: [ {// id:'Sales Register Report',
+   purpose:         #STANDARD,
+   type:            #IDENTIFICATION_REFERENCE,
+   label:           'Uttam Development',
+   position:        10 } ]
+
+
+  @UI: {  lineItem:       [ { position: 10, label: 'Sales Order' } ],
+        identification: [ { position: 10, label: 'Sales Order' } ]
+        }
+  salesorder;
+  @UI: {  lineItem:       [ { position: 20, label: ' Sales Order Item' } ],
+        identification: [ { position: 20, label: ' Sales Order Item' } ]
+        }
+  salesorderitem;
+  @UI: {  lineItem:       [ { position: 30, label: 'Billing Document Date' } ],
+        identification: [ { position: 30, label: 'Billing Document Date' } ]
+        }
+  billingdocumentdate;
+  @UI: {  lineItem:       [ { position: 40, label: 'Reference SDDocument' } ],
+        identification: [ { position: 40, label: 'Reference SDDocument' } ]
+        }
+  referencesddocument;
+  @UI: {  lineItem:       [ { position: 50, label: 'Sales Order Date' } ],
+        identification: [ { position: 50, label: 'Sales Order Date' } ]
+        }
+  salesorderdate;
+  @UI: {  lineItem:       [ { position: 60, label: 'Sales Order Type' } ],
+      identification: [ { position: 60, label: 'Sales Order Type' } ]
+      }
+  salesordertype;
+  @UI: {  lineItem:       [ { position: 70, label: 'external document id' } ],
+         identification: [ { position: 70, label: 'external document id' } ]
+         }
+  externaldocumentid;
+  @UI: {  lineItem:       [ { position: 80, label: 'sales organization' } ],
+         identification: [ { position: 80, label: 'sales organization' } ]
+         }
+  salesorganization;
+  @UI: {  lineItem:       [ { position: 90, label: 'orderquantity' } ],
+         identification: [ { position: 90, label: 'orderquantity' } ]
+         }
+  orderquantity;
+  @UI: {  lineItem:       [ { position: 100, label: 'netamount' } ],
+         identification: [ { position: 100, label: 'netamount' } ]
+         }
+  netamount;
+}

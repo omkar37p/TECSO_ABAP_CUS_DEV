@@ -1,0 +1,4 @@
+@EndUserText.label: 'Payement term view'
+define service Zpaymet_term {
+  expose ZC_PR_DEPT_VH;
+}

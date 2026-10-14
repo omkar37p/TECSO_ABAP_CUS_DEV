@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For Sales Regsiter LineItem Report V2'
+define service ZSALESREG_LINEITEM_SD {
+  expose ZSALESREG_LINEITEM_PV as SalesReg_LineItem;
+}

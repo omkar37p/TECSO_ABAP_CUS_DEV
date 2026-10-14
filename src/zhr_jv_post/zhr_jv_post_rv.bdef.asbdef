@@ -1,0 +1,65 @@
+managed with additional save
+implementation in class zbp_hr_jv_post_rv unique;
+strict ( 1 );
+
+with draft;
+define behavior for ZHR_JV_POST_RV alias _hDR//alias <alias_name>
+//persistent table zhr_jv_post
+with unmanaged save
+draft table zdf_hr_jv_post
+lock master
+total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  field ( readonly, numbering : managed ) Uuid;
+  field ( readonly : update,mandatory : create ) Zyears, Zmonth;
+  // field(readonly) CompanyCodeName;
+  field ( readonly ) Lastchangedat, Lastchangedby, Locallastchanged, Jvname;
+  association _Item { create( features : instance ); with draft; }
+  action(features : instance ) GateStatus result [1] $self;
+  determination GetHeader on save { create; field Jvname; }
+//determination Prepare on save { create;field Zmonth; }
+ action(features : instance ) Payroll result [1] $self;
+action(features : instance ) Accdoc result [1] $self;
+
+  validation Validatemonth on save { create; field Zmonth; }
+  mapping for zhr_jv_post corresponding;
+
+
+
+}
+
+define behavior for ZHR_JV_POST1_RV //alias <alias_name>
+//persistent table zhr_jv_post1
+with unmanaged save
+draft table zdf_hr_jv_post1
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update ( features : instance );
+  delete ( features : instance );
+  field(readonly) Company;
+  field ( readonly ) Uuid,Journalentrytype;
+
+  field ( readonly : update ) zmonth, zyears;
+  association _Header { with draft; }
+  determination getItem on save  { create; }
+  determination updateitem on modify{ create; update; field Glcode, Debit, Credit, Costcentre, Ledgergroup,Costcentrename,
+                Journalentrydate, Postingdate, Fiscalperiod, Documentheadertext, Transactioncurrency, Currencytranslationdate,
+                Referencedocumentnumber, Taxfulfillmentdate,Calculatetaxautomatically, Companyname, Journalentrytype; }
+  determination Company on modify {  create; }
+validation   CheckCompany on save { create; update; }
+
+  mapping for zhr_jv_post1 corresponding;
+}

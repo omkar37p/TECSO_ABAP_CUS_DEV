@@ -1,0 +1,31 @@
+projection;
+strict ( 1 );
+use draft;
+
+define behavior for ZHR_JV_POST_PV //alias <alias_name>
+{
+  use create;
+  use update;
+  use delete;
+
+//  use action PostGI;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+  use action Payroll;
+  use  action Accdoc;
+  use association _Item { create; with draft; }
+}
+
+define behavior for ZHR_JV_POST1_PV //alias <alias_name>
+{
+  use update;
+  use delete;
+
+//  use action PostGM;
+
+  use association _Header { with draft; }
+}

@@ -1,0 +1,90 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Customer Ageing Report',
+                typeNamePlural: 'Customer Ageing Report',
+                title: { type: #STANDARD, label: 'Customer Ageing Report', value: 'AccountingDocument' } },
+  presentationVariant: [{ sortOrder: [{ by: 'AccountingDocument', direction:  #DESC }] }] }
+annotate entity ZFI_CUSTAGEING_PV
+    with 
+{
+@UI.facet: [ {// id:              'Purchase Register',
+                 purpose:         #STANDARD,
+                 type:            #IDENTIFICATION_REFERENCE,
+                 label:           'Customer Ageing Report',
+                 position:        10 }]
+
+  @UI: {  lineItem:       [ { position: 10, label: 'CompanyCode' } ],
+          identification: [ { position: 10, label: 'CompanyCode' } ] ,
+          
+          selectionField : [ { position: 10 } ] }
+          
+    CompanyCode;
+    @UI: {  lineItem:       [ { position: 20, label: 'FiscalYear' } ],
+          identification: [ { position: 20, label: 'FiscalYear' } ] }
+    FiscalYear;
+    @UI: {  lineItem:       [ { position: 30, label: 'AccountingDocument' } ],
+          identification: [ { position: 30, label: 'AccountingDocument' } ] ,
+          selectionField : [ { position: 30 } ] }
+    AccountingDocument;
+    @UI: {  lineItem:       [ { position: 40, label: 'Customer' } ],
+          identification: [ { position: 40, label: 'Customer' } ] ,
+          selectionField : [ { position: 40 } ] }
+    Customer;
+    @UI: {  lineItem:       [ { position: 50, label: 'CustomerName' } ],
+          identification: [ { position: 50, label: 'CustomerName' } ] }
+    CustomerName;
+    @UI: {  lineItem:       [ { position: 60, label: 'PostingDate' } ],
+          identification: [ { position: 60, label: 'PostingDate' } ] }
+    PostingDate;
+    @UI: {  lineItem:       [ { position: 70, label: 'CURR' } ],
+          identification: [ { position: 70, label: 'CURR' } ] ,
+          selectionField : [ { position: 70 } ] }
+    CURR;
+     @UI: {  lineItem:       [ { position: 100, label: 'overdue0_90' } ],
+          identification: [ { position: 100, label: 'overdue0_90' } ] ,
+          selectionField : [ { position: 100 } ] }
+          @EndUserText.label: 'overdue0_90'
+    overdue0_90;
+    @UI: {  lineItem:       [ { position: 80, label: 'AmountInTransactionCurrency' } ],
+          identification: [ { position: 80, label: 'AmountInTransactionCurrency' } ] }
+    AmountInTransactionCurrency;
+    @UI: {  lineItem:       [ { position: 90, label: 'Arrear' } ],
+          identification: [ { position: 90, label: 'Arrear' } ] }
+    Arrear;
+   
+    @UI: {  lineItem:       [ { position: 110, label: 'overdue91_120' } ],
+          identification: [ { position: 110, label: 'overdue91_120' } ] ,
+          selectionField : [ { position: 110 } ] }
+           @EndUserText.label: 'overdue91_120'
+    overdue91_120;
+    @UI: {  lineItem:       [ { position: 120, label: 'overdue121_150' } ],
+          identification: [ { position: 120, label: 'overdue121_150' } ] ,
+          selectionField : [ { position: 120 } ] }
+           @EndUserText.label: 'overdue121_150'
+    overdue121_150;
+    @UI: {  lineItem:       [ { position: 130, label: 'overdue151_180' } ],
+          identification: [ { position: 130, label: 'overdue151_180' } ] ,
+          selectionField : [ { position: 130 } ] }
+           @EndUserText.label: 'overdue151_180'
+    overdue151_180;
+    @UI: {  lineItem:       [ { position: 140, label: 'overdue181_365' } ],
+          identification: [ { position: 140, label: 'overdue181_365' } ] ,
+          selectionField : [ { position: 140 } ] }
+           @EndUserText.label: 'overdue181_365'
+    overdue181_365;
+    @UI: {  lineItem:       [ { position: 150, label: 'overdue366_720' } ],
+          identification: [ { position: 150, label: 'overdue366_720' } ] ,
+          selectionField : [ { position: 150 } ] }
+           @EndUserText.label: 'overdue366_720'
+    overdue366_720;
+    @UI: {  lineItem:       [ { position: 160, label: 'overdue721' } ],
+          identification: [ { position: 160, label: 'overdue721' } ] ,
+          selectionField : [ { position: 160 } ] }
+           @EndUserText.label: 'overdue721'
+    overdue721;
+    @UI: {  lineItem:       [ { position: 170, label: 'OverdueStatus' } ],
+          identification: [ { position: 170, label: 'OverdueStatus' } ] ,
+          selectionField : [ { position: 170 } ] }
+    OverdueStatus;
+    
+}

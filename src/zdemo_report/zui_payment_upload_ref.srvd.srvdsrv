@@ -1,0 +1,4 @@
+@EndUserText.label: 'payment upload'
+define service ZUI_PAYMENT_UPLOAD_REF {
+  expose ZC_PAYMENT_UPLOAD_REF;
+}

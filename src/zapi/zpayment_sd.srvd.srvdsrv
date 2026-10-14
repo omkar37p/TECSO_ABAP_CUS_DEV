@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Defination for'
+define service ZPayment_sd {
+  expose ZPAYMENT_VH;
+  expose zpaymentview;
+}

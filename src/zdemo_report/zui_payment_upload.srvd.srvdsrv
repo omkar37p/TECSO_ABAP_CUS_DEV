@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition'
+define service ZUI_PAYMENT_UPLOAD {
+  expose ZC_PAYMENT_UPLOAD;
+}

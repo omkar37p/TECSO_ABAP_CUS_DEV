@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For V2'
+define service ZPR_POINVOICE_SD_V2 {
+  expose ZPR_GRNINVOICE_PV as MAINREPORT;
+}

@@ -1,0 +1,55 @@
+managed with additional save implementation in class zbp_jv_post_rview unique;
+strict ( 1 );
+with draft;
+
+define behavior for ZJV_POST_RVIEW alias _hdr
+with unmanaged save
+//persistent table zdt_jv_post
+draft table zdt_jv_post_df
+lock master
+total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create ( authorization : global );
+  update;
+  delete;
+
+  draft action Resume;
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+  determination GetHeader on save { create;}
+
+  action ( features : instance ) Payroll result [1] $self;
+  action ( features : instance ) Accdoc result [1] $self;
+
+  validation Validatemonth on save { create; field Zmonth; }
+  determination POST on save { field Checkbox; }
+
+
+  field ( readonly, numbering : managed ) Uuid;
+  field(readonly ) Jvname;
+  field ( mandatory : create ) Zmonth, Zyears;
+  field ( readonly : update ) Zmonth, Zyears;
+  association _Item { create; with draft; }
+  mapping for zdt_jv_post corresponding;
+}
+
+define behavior for ZJV_POST1_RVIEW alias _Item
+
+//persistent table zdt_jv_post1
+with unmanaged save
+draft table zdt_jv_post1_df
+lock dependent by _Header
+authorization dependent by _Header
+//etag master <field_name>
+{
+  update;
+  delete;
+  field ( readonly ) Uuid, Zmonth, Zyears, Slno;
+  association _Header { with draft; }
+  determination getItem on save  { field Costcentrename; }
+  mapping for zdt_jv_post1 corresponding;
+}

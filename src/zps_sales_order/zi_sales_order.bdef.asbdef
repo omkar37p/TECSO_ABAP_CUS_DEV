@@ -1,0 +1,28 @@
+managed implementation in class zbp_i_sales_order unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZI_SALES_ORDER alias salesorder
+//persistent table ztab_sales_order
+with unmanaged save
+draft table ztab_sales_ord
+lock master
+total etag Lastchangedat
+authorization master ( instance )
+etag master Lastchangedat
+{
+  create;
+  update;
+  delete;
+  field ( readonly : update ) Salesorder, Salesorderitem;
+
+  draft action Resume;
+  draft action ( features : instance ) Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft determine action Prepare;
+
+  determination CrtData on save { create; field Salesorder; }
+
+  mapping for ztab_sales_order corresponding;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defination of HR JV Posting'
+define service ZHR_JV_POSTING_SD {
+  expose ZHR_JV_POSTING_PV   as Header;
+  expose ZHR_JV_POSTING01_PV as Item;
+}

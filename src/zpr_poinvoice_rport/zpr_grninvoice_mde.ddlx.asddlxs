@@ -1,0 +1,75 @@
+@Metadata.layer: #PARTNER
+@UI: {
+  headerInfo: { typeName: 'Main Report For PR PO GRN INVOICE',
+                typeNamePlural: 'PR PO GRNINVOICE Report',
+                title: { type: #STANDARD, label: 'PR PO GRNINVOICE Report', value: 'PurchaseRequisition' } },
+  presentationVariant: [{ sortOrder: [{ by: 'PurchaseRequisition', direction:  #DESC }] }] }
+annotate view ZPR_GRNINVOICE_PV with
+{
+  @UI.facet: [ { id:              'GLLineItemReport',
+                      purpose:         #STANDARD,
+                      type:            #IDENTIFICATION_REFERENCE,
+                      label:           'PR PO GRNINVOICE Report',
+                      position:        30 },
+                    { id:              'PurchaseOrder',
+                      purpose:         #STANDARD,
+                      type:            #LINEITEM_REFERENCE,
+                      label:           'PurchaseOrder',
+                      position:        30,
+                      targetElement:   'PurchaseOrder'} ]
+
+  @UI: { lineItem:       [ { position: 30, label: 'Purchase Order' } ],
+         identification: [ { position: 30, label: 'Purchase Order' } ],
+         selectionField: [ { position: 30 } ] }
+  PurchaseOrder;
+  
+  @UI: { lineItem:       [ { position: 10, label: 'Purchase Requisition' } ],
+         identification: [ { position: 10, label: 'Purchase Requisition' } ],
+         selectionField: [ { position: 10 } ] }
+  PurchaseRequisition;
+
+  @UI: { lineItem:       [ { position: 20, label: 'PR Value' } ],
+         identification: [ { position: 20, label: 'PR Value' } ] }
+  PRAMOUNT;
+
+  @UI: { lineItem:       [ { position: 40, label: 'PO Amount' } ],
+         identification: [ { position: 40, label: 'PO Amount' } ] }
+  POAMOUNT;
+
+  @UI: { lineItem:       [ { position: 50, label: 'GRN Total Value' } ],
+         identification: [ { position: 50, label: 'GRN Total Value' } ] }
+  GRNVALUE;
+
+  @UI: { lineItem:       [ { position: 60, label: 'Invoice Total Value' } ],
+         identification: [ { position: 60, label: 'Invoice Total Value' } ] }
+  INVAMT;
+
+  @UI: { lineItem:       [ { position: 70, label: 'FI Invoice Total Value' } ],
+         identification: [ { position: 70, label: 'FI Invoice Total Value' } ] }
+  FIDOCAMNT;
+  
+  @UI: { lineItem:       [ { position: 80, label: 'Payment Total Value' } ],
+         identification: [ { position: 80, label: 'Payment Total Value' } ] }
+  PAYMENTAMOUNT;
+  
+  @UI: { lineItem:       [ { position: 90, label: 'Balance Payment' } ],
+         identification: [ { position: 90, label: 'Balance Payment' } ] }
+  BALANCEPAYMENTAMT;
+  
+  @UI: { lineItem:       [ { position: 100, label: 'Cleared Total Value' } ],
+         identification: [ { position: 100, label: 'Cleared Total Value' } ] }
+  CLEARINGAMOUNT;
+
+  @UI: { lineItem:       [ { position: 110, label: 'Balance Clearing' } ],
+         identification: [ { position: 110, label: 'Balance Clearing' } ] }
+  BALANCECLEARINGAMT;
+
+  @UI: { lineItem:       [ { position: 120, label: 'Currency' } ],
+         identification: [ { position: 120, label: 'Currency' } ] }
+  CURR;
+
+  @UI: { lineItem:       [ { position: 130, label: 'WBS Element' } ],
+         identification: [ { position: 130, label: 'WBS Element' } ],
+         selectionField: [ { position: 130} ] }
+  WBSELEMENT;
+}

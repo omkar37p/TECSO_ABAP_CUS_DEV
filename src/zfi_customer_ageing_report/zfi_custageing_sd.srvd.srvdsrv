@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination For V4'
+define service ZFI_CUSTAGEING_SD {
+  expose ZFI_CUSTAGEING_PV as REPORT;
+}

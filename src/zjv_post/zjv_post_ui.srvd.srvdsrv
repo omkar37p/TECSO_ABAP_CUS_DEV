@@ -1,0 +1,5 @@
+@EndUserText.label: 'JV Posting Application'
+define service ZJV_POST_UI {
+  expose ZJV_POST_PV  as Mainpage;
+  expose ZJV_POST1_PV;
+}

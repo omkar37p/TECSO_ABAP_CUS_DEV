@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Defination of GSTR3B'
+define service ZGSTR3B_SD {
+  expose ZGSTR3B_PV as MainItem;
+}

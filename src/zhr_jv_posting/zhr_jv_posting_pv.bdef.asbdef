@@ -1,0 +1,30 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZHR_JV_POSTING_PV //alias <alias_name>
+//persistent table zdb_jv_posting
+//lock master
+//authorization master ( instance )
+////etag master <field_name>
+{
+
+  use create;
+  use update;
+  use delete;
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _Item { create; with draft; }
+}
+define behavior for ZHR_JV_POSTING01_PV //alias <alias_name>
+{
+  use update;
+  use delete;
+
+  use association _Header { with draft; }
+}

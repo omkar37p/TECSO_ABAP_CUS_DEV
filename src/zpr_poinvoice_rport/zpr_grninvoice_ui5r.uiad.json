@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "ZPR_POGRNINV_REPORT",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "ZPR_POGRNINV_REPORT"
+  },
+  "ui5AppDetails": {
+    "appId": "zprpogrninvfi.zprpogrninvfi"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_A0987450F136BA2FAFA5A6BCA38A66302412A209_TM",
+    "semanticObject": "ZPR_POGRNINV_FI",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_A0987450F136BA2FAFA5A6BCA38A66302412A209_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "ZPR_POGRNINV_REPORT",
+        "subtitle": "ZPR_POGRNINV_REPORT"
+      }
+    }
+  ]
+}
